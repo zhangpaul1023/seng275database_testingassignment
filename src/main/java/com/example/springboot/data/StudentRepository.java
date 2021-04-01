@@ -14,6 +14,7 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
     List<Student> findAllActiveStudents();
 
     List<Student> findAll();
-    
+
+    @Query("Select s from Student s order by s.firstName")
     List<Student> findAllFirstNameSort();
 }
